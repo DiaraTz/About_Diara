@@ -1,0 +1,250 @@
+/* CSS */
+
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-image: url(./assets/background.jpg);
+  background-repeat: no-repeat;
+  background-position-y: -400px;
+  z-index: -1;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 0; /* add this to move the icon to the start */
+}
+
+.icon-gapper {
+  border-right: 3px black solid;
+}
+
+.icon-image {
+  height: 50px;
+  margin: auto; /* add this to center the image horizontally and vertically */
+}
+
+.navbar {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px black solid;
+  z-index: 2;
+}
+
+#video-container {
+  position: fixed;
+  top: 9.5%; /* Position the video below the navbar */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Adjust the height to fill the remaining space */
+  z-index: 0; /* Ensure the video is below the navbar */
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  z-index: 2;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #000000;
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  color: #000000;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about {
+  display: grid;
+  justify-items: center;
+  width: 25%;
+  font-size: 1.75em;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  gap: 10px;
+  padding: 10px; /* Adjust padding */
+}
+
+.about img {
+  border-radius: 50%;
+  margin: 10px; /* add 10px margin around the image */
+}
+
+about {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-me {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  justify-items: center;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-me h1 {
+  grid-column: span 2;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.about-me-contents {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+}
+
+.about-me-contents img {
+  grid-column: 1;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-me-contents div {
+  grid-column: 2;
+  text-align: left;
+}
+
+.about-me-contents h1 {
+  margin: 0;
+  font-size: 1.75em;
+  color: #333;
+}
+
+.about-me-contents p {
+  margin: 5px 0 0 0;
+  font-size: 1.25em;
+  color: #555;
+}
+
+.about-me-contents a {
+  display: inline-block;
+}
+
+.media-me {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.media-me h1 {
+  grid-column: span 3;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+video {
+  z-index: 1;
+}
+
+#muteButton {
+  cursor: pointer;
+  display: block;
+  width: 50px; /* Adjust the width and height as needed */
+  height: 50px;
+  border-radius: 50%;
+  background-image: url('./assets/play.gif'); /* Replace 'path/to/mute-icon.png' with the path to your mute icon */
+  background-size: cover;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  z-index: 2;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for screens smaller than 768px */
+  .navbar {
+      flex-direction: column; /* Change navbar to column layout */
+      align-items: center; /* Center items vertically */
+  }
+
+  .navbar ul {
+      margin-top: 10px; /* Add margin to the top */
+  }
+
+  .navbar li {
+      margin-right: 0; /* Remove right margin */
+  }
+  
+  .about {
+      width: 80%; /* Adjust width */
+  }
+  
+  .about-me {
+      width: 80%; /* Adjust width */
+  }
+
+  .media-me {
+      width: 80%; /* Adjust width */
+  }
+}
